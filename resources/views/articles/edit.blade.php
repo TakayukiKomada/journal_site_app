@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <a href="/articles/{{ $article->id }}">戻る</a>
-    <h1>更新</h1>
+    <h1>投稿論文編集</h1>
     <!-- 更新先はarticlesのidにしないと増える php artisan rote:listで確認① -->
     <form action="/articles/{{ $article->id }}" method="post">
         @csrf
         @method('PATCH')
         <p>
-            <label for="title">タイトル</label><br>
+            <label for="title">論文タイトル</label><br>
             <input type="text" name="title" value="{{ $article->title }}">
         </p>
         <p>

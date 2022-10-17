@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    <a href="/articles">戻る</a>
-    <h1>{{ $article->title }}</h1>
+    <h1>タイトル:{{ $article->title }}</h1>
     <p>{!! nl2br(e($article->body)) !!}</p>
     <div class="button-group">
         <!-- $articleのidを元に編集ページへ遷移する -->
+        <button onclick="location.href='/articles'">一覧へ戻る</button>
         <button onclick="location.href='/articles/{{ $article->id }}/edit'">編集する</button>
         <form action="/articles/{{ $article->id }}" method="post">
             @csrf
